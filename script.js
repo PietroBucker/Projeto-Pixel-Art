@@ -15,8 +15,12 @@ window.onload = function () {
     }
   }
   buttonRandom.addEventListener('click', randomColorPalette);
+  buttonRandom.addEventListener('click', setColorStorage);
+
   colorPalette();
+  getColorStorage();
 };
+const colors = document.querySelector('#color-palette');
 
 function colorPalette() {
   const color = document.querySelectorAll('.color');
@@ -24,4 +28,14 @@ function colorPalette() {
   color[1].style.backgroundColor = 'red';
   color[2].style.backgroundColor = 'blue';
   color[3].style.backgroundColor = 'green';
+}
+function setColorStorage() {
+  const setColor = colors.innerHTML;
+  localStorage.setItem('colorPalette', JSON.stringify(setColor));
+}
+function getColorStorage() {
+  const getColor = localStorage.getItem('colorPalette');
+  if (getColor !== null) {
+    colors.innerHTML = JSON.parse(getColor);
+  }
 }
