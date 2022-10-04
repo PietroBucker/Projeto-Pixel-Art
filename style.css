@@ -30,3 +30,6 @@
   text-align: center;
   line-height: 10px;
 }
+.selected{
+  box-shadow: 0 0 15px burlywood;
+}
