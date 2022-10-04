@@ -2,14 +2,15 @@
   margin: auto;
   text-align: center;
 }
+
 #color-palette {
-  border: 2px solid red;
   width: 400px;
   height: 100px;
   margin: auto;
 }
+
 .color {
-  border: 2px solid blue;
+  border: 1px solid black;
   width: 93px;
   height: 95px;
   display: inline-block;
