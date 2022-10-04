@@ -15,9 +15,18 @@
   height: 95px;
   display: inline-block;
   align-items: center;
+  border-radius: 100%;
 }
 
 #button-random-color {
   position: absolute;
-  left: 570px;
+  left: 60%;
+}
+
+#pixel-board {
+  width: auto;
+  margin: auto;
+  margin-top: 50px;
+  text-align: center;
+  line-height: 10px;
 }
