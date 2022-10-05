@@ -36,13 +36,14 @@ function randomColorPalette() {
   }
 }
 function pixelStyle(parametro) {
-  parametro.className = 'pixel';
-  parametro.style.border = '1px solid black';
-  parametro.style.width = '40px';
-  parametro.style.height = '40px';
-  parametro.style.backgroundColor = 'white';
-  parametro.style.display = 'inline-block';
-  parametro.style.margin = '0';
+  const param = parametro;
+  param.className = 'pixel';
+  param.style.border = '1px solid black';
+  param.style.width = '40px';
+  param.style.height = '40px';
+  param.style.backgroundColor = 'white';
+  param.style.display = 'inline-block';
+  param.style.margin = '0';
 }
 function createPixels() {
   for (let i = 0; i < 5; i += 1) {
