@@ -42,7 +42,7 @@ function pixelStyle(parametro) {
   param.style.border = '1px solid black';
   param.style.width = '40px';
   param.style.height = '40px';
-  param.style.backgroundColor = 'white';
+  param.style.background = 'white';
   param.style.display = 'inline-block';
   param.style.margin = '0';
 }
