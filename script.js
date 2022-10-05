@@ -72,19 +72,13 @@ function selectColor(event) {
     }
   }
 }
-function setColorPixelStorage(event) {
-  const storageColorPixel = event.target.style.backgroundColor;
-  localStorage.setItem('selected', storageColorPixel);
-}
 function getColorPixelStorage(event) {
-  // const getsSelected = document.querySelector('.selected');
-  // const test = getsSelected.style.backgroundColor;
-  // console.log(test);
-  const storageColorPixelGet = localStorage.getItem('selected');
+  const getsSelected = document.querySelector('.selected');
+  const getColor = getsSelected.style.backgroundColor;
   const gerTarget = event.target;
   if (gerTarget.id !== 'pixel-board') {
-    gerTarget.style.backgroundColor = storageColorPixelGet;
-    gerTarget.style.borderColor = storageColorPixelGet;
+    gerTarget.style.backgroundColor = getColor;
+    gerTarget.style.borderColor = getColor;
   }
 }
 
@@ -92,7 +86,6 @@ window.onload = function inicializa() {
   buttonRandom.addEventListener('click', randomColorPalette);
   buttonRandom.addEventListener('click', setColorStorage);
   colors.addEventListener('click', selectColor);
-  colors.addEventListener('click', setColorPixelStorage);
   pixelBoard.addEventListener('click', getColorPixelStorage);
   colorPalette();
   getColorStorage();
