@@ -2,10 +2,12 @@ const colors = document.querySelector('#color-palette');
 const pixelBoard = document.querySelector('#pixel-board');
 const buttonRandom = document.querySelector('#button-random-color');
 const selectedColor = document.querySelectorAll('.color');
-
+// const colorPix = document.querySelector('.selected');
 function colorPalette() {
   const color = document.querySelectorAll('.color');
+  color[0].className = 'color selected';
   color[0].style.backgroundColor = 'black';
+  localStorage.setItem('selected', 'black');
   color[1].style.backgroundColor = 'red';
   color[2].style.backgroundColor = 'blue';
   color[3].style.backgroundColor = 'green';
@@ -54,24 +56,36 @@ function createPixels() {
   }
 }
 function selectColor(event) {
-  const teste = event.target;
-  console.log(teste);
-  if (teste.className === 'color selected') {
-    teste.className = 'color';
-  } else {
-    selectedColor[0].className = 'color';
-    selectedColor[1].className = 'color';
-    selectedColor[2].className = 'color';
-    selectedColor[3].className = 'color';
-    teste.className = 'color selected';
+  const getColor = event.target;
+  if (getColor.id !== 'color-palette') {
+    if (getColor.className === 'color') {
+      selectedColor[0].className = 'color';
+      selectedColor[1].className = 'color';
+      selectedColor[2].className = 'color';
+      selectedColor[3].className = 'color';
+      getColor.className = 'color selected';
+    } else {
+      getColor.className = 'color';
+    }
   }
+}
+function setColorPixelStorage(event) {
+  const storageColorPixel = event.target.style.backgroundColor;
+  localStorage.setItem('selected', storageColorPixel);
+}
+function getColorPixelStorage(event) {
+  const storageColorPixelGet = localStorage.getItem('selected');
+  const gerTarget = event.target;
+  gerTarget.style.backgroundColor = storageColorPixelGet;
+  gerTarget.style.borderColor = storageColorPixelGet;
 }
 
 window.onload = function iniciar() {
   buttonRandom.addEventListener('click', randomColorPalette);
   buttonRandom.addEventListener('click', setColorStorage);
   colors.addEventListener('click', selectColor);
-
+  colors.addEventListener('click', setColorPixelStorage);
+  pixelBoard.addEventListener('click', getColorPixelStorage);
   createPixels();
   colorPalette();
   getColorStorage();
