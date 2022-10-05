@@ -4,22 +4,21 @@ const buttonRandom = document.querySelector('#button-random-color');
 const selectedColor = document.querySelectorAll('.color');
 // const colorPix = document.querySelector('.selected');
 function colorPalette() {
-  const color = document.querySelectorAll('.color');
-  color[0].className = 'color selected';
+  const color = selectedColor;
+  // color[0].className = 'color selected';
   color[0].style.backgroundColor = 'black';
-  localStorage.setItem('selected', 'black');
   color[1].style.backgroundColor = 'red';
   color[2].style.backgroundColor = 'blue';
   color[3].style.backgroundColor = 'green';
 }
 function setColorStorage() {
   const setColor = colors.innerHTML;
-  localStorage.setItem('colorPalette', JSON.stringify(setColor));
+  localStorage.setItem('colorPalette', setColor);
 }
 function getColorStorage() {
   const getColor = localStorage.getItem('colorPalette');
   if (getColor !== null) {
-    colors.innerHTML = JSON.parse(getColor);
+    colors.innerHTML = getColor;
   }
 }
 function randomColorPalette() {
@@ -70,24 +69,31 @@ function selectColor(event) {
     }
   }
 }
-function setColorPixelStorage(event) {
-  const storageColorPixel = event.target.style.backgroundColor;
-  localStorage.setItem('selected', storageColorPixel);
-}
+// function setColorPixelStorage(event) {
+//   const storageColorPixel = event.target.style.backgroundColor;
+//   localStorage.setItem('selected', storageColorPixel);
+// }
 function getColorPixelStorage(event) {
-  const storageColorPixelGet = localStorage.getItem('selected');
+  const getsSelected = document.querySelector('.selected');
+  const test = getsSelected.style.backgroundColor;
+  console.log(test);
+  // const storageColorPixelGet = localStorage.getItem('selected');
   const gerTarget = event.target;
-  gerTarget.style.backgroundColor = storageColorPixelGet;
-  gerTarget.style.borderColor = storageColorPixelGet;
+  if (gerTarget.id !== 'pixel-board') {
+    gerTarget.style.backgroundColor = test;
+    gerTarget.style.borderColor = test;
+  }
 }
 
 window.onload = function iniciar() {
+  selectedColor[0].className = 'color selected';
+  colorPalette();
   buttonRandom.addEventListener('click', randomColorPalette);
   buttonRandom.addEventListener('click', setColorStorage);
   colors.addEventListener('click', selectColor);
-  colors.addEventListener('click', setColorPixelStorage);
+  // colors.addEventListener('click', setColorPixelStorage);
   pixelBoard.addEventListener('click', getColorPixelStorage);
   createPixels();
-  colorPalette();
   getColorStorage();
+  
 };
