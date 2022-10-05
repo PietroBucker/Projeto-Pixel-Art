@@ -1,11 +1,11 @@
 const colors = document.querySelector('#color-palette');
 const pixelBoard = document.querySelector('#pixel-board');
 const buttonRandom = document.querySelector('#button-random-color');
-const selectedColor = document.querySelectorAll('.color');
+let selectedColor = document.querySelectorAll('.color');
 // const colorPix = document.querySelector('.selected');
 function colorPalette() {
   const color = selectedColor;
-  // color[0].className = 'color selected';
+  color[0].className = 'color selected';
   color[0].style.backgroundColor = 'black';
   color[1].style.backgroundColor = 'red';
   color[2].style.backgroundColor = 'blue';
@@ -13,12 +13,14 @@ function colorPalette() {
 }
 function setColorStorage() {
   const setColor = colors.innerHTML;
+  console.log(setColor);
   localStorage.setItem('colorPalette', setColor);
 }
 function getColorStorage() {
   const getColor = localStorage.getItem('colorPalette');
   if (getColor !== null) {
     colors.innerHTML = getColor;
+    selectedColor = document.querySelectorAll('.color');
   }
 }
 function randomColorPalette() {
@@ -48,6 +50,7 @@ function createPixels() {
   for (let i = 0; i < 5; i += 1) {
     for (let j = 0; j < 5; j += 1) {
       const creatPixel = document.createElement('div');
+      creatPixel.classList.add('board');
       pixelStyle(creatPixel);
       pixelBoard.appendChild(creatPixel);
     }
@@ -58,42 +61,40 @@ function createPixels() {
 function selectColor(event) {
   const getColor = event.target;
   if (getColor.id !== 'color-palette') {
-    if (getColor.className === 'color') {
+    if (getColor.className === 'color selected') {
+      getColor.className = 'color selected';
+    } else {
       selectedColor[0].className = 'color';
       selectedColor[1].className = 'color';
       selectedColor[2].className = 'color';
       selectedColor[3].className = 'color';
       getColor.className = 'color selected';
-    } else {
-      getColor.className = 'color';
     }
   }
 }
-// function setColorPixelStorage(event) {
-//   const storageColorPixel = event.target.style.backgroundColor;
-//   localStorage.setItem('selected', storageColorPixel);
-// }
+function setColorPixelStorage(event) {
+  const storageColorPixel = event.target.style.backgroundColor;
+  localStorage.setItem('selected', storageColorPixel);
+}
 function getColorPixelStorage(event) {
-  const getsSelected = document.querySelector('.selected');
-  const test = getsSelected.style.backgroundColor;
-  console.log(test);
-  // const storageColorPixelGet = localStorage.getItem('selected');
+  // const getsSelected = document.querySelector('.selected');
+  // const test = getsSelected.style.backgroundColor;
+  // console.log(test);
+  const storageColorPixelGet = localStorage.getItem('selected');
   const gerTarget = event.target;
   if (gerTarget.id !== 'pixel-board') {
-    gerTarget.style.backgroundColor = test;
-    gerTarget.style.borderColor = test;
+    gerTarget.style.backgroundColor = storageColorPixelGet;
+    gerTarget.style.borderColor = storageColorPixelGet;
   }
 }
 
-window.onload = function iniciar() {
-  selectedColor[0].className = 'color selected';
-  colorPalette();
+window.onload = function inicializa() {
   buttonRandom.addEventListener('click', randomColorPalette);
   buttonRandom.addEventListener('click', setColorStorage);
   colors.addEventListener('click', selectColor);
-  // colors.addEventListener('click', setColorPixelStorage);
+  colors.addEventListener('click', setColorPixelStorage);
   pixelBoard.addEventListener('click', getColorPixelStorage);
-  createPixels();
+  colorPalette();
   getColorStorage();
-  
+  createPixels();
 };
