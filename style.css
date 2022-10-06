@@ -20,7 +20,7 @@
 
 #button-random-color {
   position: absolute;
-  left: 60%;
+  left: 300px;
 }
 
 #pixel-board {
@@ -33,4 +33,9 @@
 
 .selected {
   box-shadow: 0 0 15px burlywood;
+}
+
+#clear-board {
+  position:absolute;
+  left: 200px;
 }
