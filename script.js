@@ -2,8 +2,12 @@ const colors = document.querySelector('#color-palette');
 const pixelBoard = document.querySelector('#pixel-board');
 const buttonRandom = document.querySelector('#button-random-color');
 const buttonClear = document.querySelector('#clear-board');
+const buttonVqv = document.querySelector('#generate-board');
+const inputSize = document.querySelector('#board-size');
 let selectedColor = document.querySelectorAll('.color');
 const colorSelected = 'color selected';
+const pBoard = '#pixel-board';
+let input = 0;
 function colorPalette() {
   const color = selectedColor;
   color[0].className = colorSelected;
@@ -47,9 +51,29 @@ function pixelStyle(parametro) {
   param.style.display = 'inline-block';
   param.style.margin = '0';
 }
+function buttonVqvEvent() {
+  input = inputSize.value;
+  if (input <= 0) {
+    alert('Board inválido!');
+  }
+}
+function inicializaInput() {
+  input = inputSize.value;
+  pixelBoard.innerHTML = '';
+}
+function inputComparsion() {
+  if (input < 5) {
+    input = 5;
+    document.body.style.zoom = '100%';
+  } else if (input > 50) {
+    input = 50;
+    document.body.style.zoom = '90%';
+  }
+}
 function createPixels() {
-  for (let i = 0; i < 5; i += 1) {
-    for (let j = 0; j < 5; j += 1) {
+  inputComparsion();
+  for (let i = 0; i < input; i += 1) {
+    for (let j = 0; j < input; j += 1) {
       const creatPixel = document.createElement('div');
       creatPixel.classList.add('board');
       pixelStyle(creatPixel);
@@ -88,7 +112,7 @@ function clearBoard() {
   pixelBoard.innerHTML = clean;
 }
 function savePixelStorage() {
-  const getPixel = document.querySelector('#pixel-board');
+  const getPixel = document.querySelector(pBoard);
   localStorage.setItem('pixelBoard', getPixel.innerHTML);
 }
 function getPixeCanvaslStorage() {
@@ -97,15 +121,33 @@ function getPixeCanvaslStorage() {
     pixelBoard.innerHTML = setPixel;
   }
 }
+function setSizeCanvas() {
+  const teste1 = document.querySelector(pBoard);
+  console.log(JSON.stringify(teste1.innerHTML));
+  const try1 = JSON.stringify(teste1.innerHTML);
+  localStorage.setItem('boardSize', try1);
+}
+function getCanvasSize() {
+  const teste2 = localStorage.getItem('boardSize');
+  pixelBoard.innerHTML = JSON.parse(teste2);
+  if (teste2 === null) {
+    createPixels();
+  }
+}
 window.onload = function inicializa() {
+  buttonVqv.addEventListener('click', inicializaInput);
   buttonRandom.addEventListener('click', randomColorPalette);
   buttonRandom.addEventListener('click', setColorStorage);
   colors.addEventListener('click', selectColor);
   pixelBoard.addEventListener('click', getColorPixelStorage);
   buttonClear.addEventListener('click', clearBoard);
   pixelBoard.addEventListener('click', savePixelStorage);
+  buttonVqv.addEventListener('click', buttonVqvEvent);
+  buttonVqv.addEventListener('click', createPixels);
+
+  getCanvasSize();
   colorPalette();
   getColorStorage();
-  createPixels();
   getPixeCanvaslStorage();
+  buttonVqv.addEventListener('click', setSizeCanvas);
 };
