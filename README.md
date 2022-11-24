@@ -26,7 +26,7 @@ As características mais importantes deste projeto são:
 7-Porém, se somarmos um valor menor que 5, será criado um quadro com 25 pixels. E se somarmos um valor maior que 50, a placa terá apenas 2500 pixels.
 
 
-`rgb(9, 105, 218)## *How it works
+## *`rgb(9, 105, 218)How it works
 *The most important features of this project are:*
 
 *1-Creation of the pixel panel through JavaScript;
