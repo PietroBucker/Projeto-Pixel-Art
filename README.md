@@ -26,7 +26,7 @@ As características mais importantes deste projeto são:
 7-Porém, se somarmos um valor menor que 5, será criado um quadro com 25 pixels. E se somarmos um valor maior que 50, a placa terá apenas 2500 pixels.
 
 
-## *`rgb(9, 105, 218)How it works
+## *`rgb(9, 105, 218)`How it works
 *The most important features of this project are:*
 
 *1-Creation of the pixel panel through JavaScript;
@@ -39,7 +39,7 @@ As características mais importantes deste projeto são:
 
 *5-By clicking the clear button all pixels change their backgroundColor to white. Beyond that, by choosing a number from the input area and pressing the VQV 6-button, we generate a new board with the desired size. That is, if we send the value 8, a panel with 8 pixels wide and 8 pixels high will be created, resulting in 64 pixels in total.
 
-*7-However, if we add a value lower than 5, a frame with 25 pixels will be created. And if we add a value higher than 50, the board will have only 2500 pixels*.`
+*7-However, if we add a value lower than 5, a frame with 25 pixels will be created. And if we add a value higher than 50, the board will have only 2500 pixels*.
 
 
 
