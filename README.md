@@ -25,7 +25,8 @@ As características mais importantes deste projeto são:
 
 7-Porém, se somarmos um valor menor que 5, será criado um quadro com 25 pixels. E se somarmos um valor maior que 50, a placa terá apenas 2500 pixels.
 
-https://img.shields.io/static/v1?label=<LABEL>&message=<teste>&color=<red>
+https://img.shields.io/static/v1?label=<LABEL>&message=teste&color=red
+  https://img.shields.io/badge/-testet-red
 ## *How it works
 *The most important features of this project are:*
 
