@@ -6,6 +6,7 @@ If you are interested in seeing the final result you can access it by this link.
 
 ## Projeto desenvolvido durante o bloco 05, no qual foram estudados a árvore DOM, eventos e armazenamento de JavaScript.
 
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 
 Implantar
 Se você estiver interessado em ver o resultado final, pode acessá-lo neste link.[Pixel-Art](http://pixelart-pietrobucker.surge.sh/).
