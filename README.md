@@ -6,7 +6,6 @@ If you are interested in seeing the final result you can access it by this link.
 
 ## Projeto desenvolvido durante o bloco 05, no qual foram estudados a árvore DOM, eventos e armazenamento de JavaScript.
 
-![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 
 Implantar
 Se você estiver interessado em ver o resultado final, pode acessá-lo neste link.[Pixel-Art](http://pixelart-pietrobucker.surge.sh/).
@@ -25,9 +24,7 @@ As características mais importantes deste projeto são:
 5-Ao clicar no botão limpar, todos os pixels mudam sua cor de fundo para branco. Além disso, escolhendo um número na área de entrada e pressionando o botão VQV 6, geramos uma nova placa com o tamanho desejado. Ou seja, se enviarmos o valor 8, será criado um painel com 8 pixels de largura e 8 pixels de altura, resultando em 64 pixels no total.
 
 7-Porém, se somarmos um valor menor que 5, será criado um quadro com 25 pixels. E se somarmos um valor maior que 50, a placa terá apenas 2500 pixels.
-
-https://img.shields.io/static/v1?label=<LABEL>&message=teste&color=red
-  https://img.shields.io/badge/-testet-red
+-----------------------------------------------------------------------------------------------------------------------------------------------------
 ## *How it works
 *The most important features of this project are:*
 
