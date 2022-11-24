@@ -1,4 +1,4 @@
-## Project developed during block 05, in which the DOM tree, events, and JavaScript storage were studied.
+
 
 
 Deploy
@@ -24,6 +24,8 @@ As características mais importantes deste projeto são:
 5-Ao clicar no botão limpar, todos os pixels mudam sua cor de fundo para branco. Além disso, escolhendo um número na área de entrada e pressionando o botão VQV 6, geramos uma nova placa com o tamanho desejado. Ou seja, se enviarmos o valor 8, será criado um painel com 8 pixels de largura e 8 pixels de altura, resultando em 64 pixels no total.
 
 7-Porém, se somarmos um valor menor que 5, será criado um quadro com 25 pixels. E se somarmos um valor maior que 50, a placa terá apenas 2500 pixels.
+
+## Project developed during block 05, in which the DOM tree, events, and JavaScript storage were studied.
 
 ## *How it works
 *The most important features of this project are:*
