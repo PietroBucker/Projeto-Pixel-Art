@@ -18,7 +18,7 @@ function colorPalette() {
 }
 function setColorStorage() {
   const setColor = colors.innerHTML;
-  console.log(setColor);
+  // console.log(setColor);
   localStorage.setItem('colorPalette', setColor);
 }
 function getColorStorage() {
@@ -123,7 +123,7 @@ function getPixeCanvaslStorage() {
 }
 function setSizeCanvas() {
   const teste1 = document.querySelector(pBoard);
-  console.log(JSON.stringify(teste1.innerHTML));
+  // console.log(JSON.stringify(teste1.innerHTML));
   const try1 = JSON.stringify(teste1.innerHTML);
   localStorage.setItem('boardSize', try1);
 }
