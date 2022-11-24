@@ -1,13 +1,7 @@
-
-
-
-Deploy
-If you are interested in seeing the final result you can access it by this link.[Pixel-Art](http://pixelart-pietrobucker.surge.sh/).
-
 ## Projeto desenvolvido durante o bloco 05, no qual foram estudados a árvore DOM, eventos e armazenamento de JavaScript.
 
 
-Implantar
+Deploy
 Se você estiver interessado em ver o resultado final, pode acessá-lo neste link.[Pixel-Art](http://pixelart-pietrobucker.surge.sh/).
 
 ## Como funciona
@@ -26,6 +20,10 @@ As características mais importantes deste projeto são:
 7-Porém, se somarmos um valor menor que 5, será criado um quadro com 25 pixels. E se somarmos um valor maior que 50, a placa terá apenas 2500 pixels.
 
 ## Project developed during block 05, in which the DOM tree, events, and JavaScript storage were studied.
+
+
+Deploy
+If you are interested in seeing the final result you can access it by this link.[Pixel-Art](http://pixelart-pietrobucker.surge.sh/).
 
 ## *How it works
 *The most important features of this project are:*
