@@ -25,8 +25,8 @@ As características mais importantes deste projeto são:
 
 7-Porém, se somarmos um valor menor que 5, será criado um quadro com 25 pixels. E se somarmos um valor maior que 50, a placa terá apenas 2500 pixels.
 
-Este é um {c:red}texto vermelho.{/c}
-## *`rgb(9, 105, 218)`How it works
+https://img.shields.io/static/v1?label=<LABEL>&message=<teste>&color=<red>
+## *How it works
 *The most important features of this project are:*
 
 *1-Creation of the pixel panel through JavaScript;
